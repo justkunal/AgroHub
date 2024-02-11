@@ -9,6 +9,7 @@ import Navbar from "../../Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   // Define the show/hide state outside the function so it persists between renders.
@@ -140,13 +141,15 @@ const Login = () => {
                 </label>
               </div>
               <div className="Sign-up-box">
-                <button
-                  type="submit"
-                  onClick={_handleSubmit}
-                  className="button-signup"
-                >
-                  Login
-                </button>
+                <Link to="/home">
+                  <button
+                    type="submit"
+                    onClick={_handleSubmit}
+                    className="button-signup"
+                  >
+                    Login
+                  </button>
+                </Link>
                 <a href="">Forgot Password?</a>
               </div>
             </form>

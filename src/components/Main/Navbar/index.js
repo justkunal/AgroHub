@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 import index from "./index.css";
-import zenlogo from "../Images/pink_zen 1.png";
 import { useNavigate } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
 import Hambur from "../Images/hamburger.png";
-import Home from "../Home/index";
-import Signup from "../Registration/SignUp/SignUp";
-import Login from "../Registration/Login/Login";
 import Fade from "react-reveal/Fade";
-import Bounce from "react-reveal/Bounce";
 import PerInfo from "../Images/online-business.png";
 import DashIcon from "../Images/home.png";
 import CommunityIcon from "../Images/add-user.png";
 import ProfileIcon from "../Images/group.png";
 import SessionIcon from "../Images/contact-us.png";
-import ChatbotIcon from "../Images/chat-icon.png";
 import Notification from "../Images/user.png";
-import Signout from "../Images/sign-out.png";
-import Hamburger from "../Images/hamburger.png";
-import Profile from "../Images/user-profile.png";
-import DashboardIcon from "../Images/dashnboard-icon.png";
+
 import AgroLogo from "../Images/agrohub.jpg";
 
 function Navbar() {

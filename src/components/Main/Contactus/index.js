@@ -1,5 +1,4 @@
 import React from "react";
-import contact from "../Images/contact.png";
 import Navbar from "../Navbar";
 import "./index.css";
 import { motion } from "framer-motion";

@@ -71,16 +71,6 @@ function Popup({ onClose }) {
         </div>
 
         <div className="counsellor-work-content">
-          <div className="counsellor-workas">
-            <p className="work-heading">
-              Work as <span>(optional)</span>
-            </p>
-            <div className="counsellor-workas-optional">
-              <p className="counsellor-expert">Work as Expert Psychologist</p>
-              <p className="counsellor-intern">Work as Intern Psychologist</p>
-            </div>
-          </div>
-
           <div className="counsellor-resume">
             <p>
               Upload Resume <span>(pdf)</span>

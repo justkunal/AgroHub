@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 
 import Dashboard from "../User-Dash/Dashboard/dashboard";
-import Dashbaord2 from "../User-Dash/Dashboard2/dashboard2";
 import CounsellorDashboard from "../Counsellor-Dash/Dash-counsellor/dashboard";
 import Profile from "../User-Dash/Profile/profile";
 import ProfileSelfAssessment from "../User-Dash/Profile-self-assesment/profile";
@@ -111,16 +110,6 @@ export default function Allroutes() {
         <Route path="/counsellors" element={<Counsellors />} />
         <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path='/' element={<Dashbaord2/>}/> */}
-        <Route
-          path="/dashboard2"
-          element={
-            session?.length > 0 ? (
-              <Dashbaord2 data={[session, user]} />
-            ) : (
-              <Dashboard data={user} />
-            )
-          }
-        />
 
         <Route path="/dashboard-counsellor" element={<CounsellorDashboard />} />
 
