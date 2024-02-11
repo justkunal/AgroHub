@@ -10,8 +10,7 @@
 }
 
 .nav-logo {
-  flex-shrink: 0;
-  padding-left: 42px;
+  width: 50%;
 }
 
 .nav-box {
@@ -38,7 +37,10 @@
 .nav-icons img {
   cursor: pointer;
 }
-
+.agrologo {
+  width: 30%;
+  padding-left: 30px;
+}
 #mb-view-class-1 {
   display: none;
 }

@@ -18,6 +18,10 @@
   padding-left: 250px;
 }
 
+.farmer-pro {
+  width: 40%;
+}
+
 .dashboard-profile {
   display: inline-flex;
   flex-direction: column;

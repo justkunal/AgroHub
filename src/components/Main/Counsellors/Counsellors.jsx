@@ -34,7 +34,7 @@ const Counsellors = () => {
         intial={{ width: 0 }}
         animate={{ width: "100%" }}
         exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
-        className="counsellor-container"
+        className="counsellor-container coordinator"
       >
         <div className="counsellor-banner">
           <img
@@ -48,9 +48,9 @@ const Counsellors = () => {
             className="counsellor-register"
           >
             <div className="counsellor-heading">
-              <h3>Counsellors</h3>
+              <h3>Coordinators</h3>
               <p>
-                Grow your counselling practice from the comfort of your home at
+                Grow your coordinating practice from the comfort of your home at
                 zero operating cost.
               </p>
             </div>
@@ -67,9 +67,9 @@ const Counsellors = () => {
         </div>
         <Fade bottom>
           <div className="free-assessment-mb">
-            <div className="free-assessment-mb-1">Counsellors</div>
+            <div className="free-assessment-mb-1">Coordinators</div>
             <div className="free-assessment-mb-2 free-assessment-mb-2-u">
-              Grow your counselling practice from the comfort of your home at
+              Grow your coordinating practice from the comfort of your home at
               zero operating cost.
             </div>
             <div>
@@ -91,12 +91,16 @@ const Counsellors = () => {
               <div className="counsellor-line"></div>
             </div>
             <p>
-              Ending the stigma surrounding mental health issues and becoming a
-              leading name in the field involves a concerted effort on multiple
-              fronts. It requires a combination of advocacy, education, policy
-              changes, and support from various stakeholders to create a society
-              that understands, accepts, and supports individuals facing mental
-              health challenges
+              As an Coordinator, our platform offers streamlined agricultural
+              management tools. Assign crop types, field locations, and
+              schedules effortlessly. Access harvesting guidelines and best
+              practices for optimal yield. Define data collection requirements
+              and reporting deadlines easily. Customize assignments for specific
+              needs. Foster seamless communication with built-in messaging.
+              Capture visual insights with image uploads. Ensure data security
+              and integrity. Revolutionize agriculture management with our
+              platform's efficiency and sustainability focus. Join us today to
+              transform agricultural operations for a brighter future.
             </p>
           </div>
         </Fade>
@@ -209,63 +213,6 @@ const Counsellors = () => {
               </div>
             </Fade>
           </div>
-        </div>
-
-        <div className="counsellor-footer">
-          <img className="counsellor-footer-img" src={footerbanner}></img>
-          <Fade bottom>
-            <div className="counsellor-footer-register">
-              <div className="counsellor-footer-heading">
-                <div className="counsellor-footer-heading-1">
-                  <h1>Join </h1>
-                  <img src={logo}></img>
-                </div>
-                <p>Help us make the world happier, one life at a time.</p>
-              </div>
-              <div className="counsellor-footer-heading-lower">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  className="counsellor-footer-btn"
-                  onClick={openPopup}
-                >
-                  Register For Free
-                </motion.button>
-                <p>
-                  Already have an account ?{" "}
-                  <span>
-                    <a>Log In</a>
-                  </span>
-                </p>
-              </div>
-            </div>
-          </Fade>
-        </div>
-
-        <div className="counsellor-footer-mb">
-          <Fade bottom>
-            <div className="counsellor-footer-heading">
-              <div className="counsellor-footer-heading-1">
-                <h1>Join </h1>
-                <img src={logo}></img>
-              </div>
-              <p>Help us make the world happier, one life at a time.</p>
-            </div>
-            <div className="counsellor-footer-heading-lower">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                className="counsellor-footer-btn"
-                onClick={openPopup}
-              >
-                Register For Free
-              </motion.button>
-              <p>
-                Already have an account ?{" "}
-                <span>
-                  <a>Log In</a>
-                </span>
-              </p>
-            </div>
-          </Fade>
         </div>
       </motion.div>
       {/* Render the Popup component if isPopupVisible is true */}

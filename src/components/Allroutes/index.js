@@ -4,15 +4,11 @@ import {
   Route,
   Routes,
   useLocation,
-  useNavigate
+  useNavigate,
 } from "react-router-dom";
 
 import Dashboard from "../User-Dash/Dashboard/dashboard";
 import Dashbaord2 from "../User-Dash/Dashboard2/dashboard2";
-import Session from "../User-Dash/Session/session";
-import Community from "../User-Dash/Community/community";
-import Community2 from "../User-Dash/Community2/community2";
-import Community3 from "../User-Dash/Community3/community3";
 import CounsellorDashboard from "../Counsellor-Dash/Dash-counsellor/dashboard";
 import CounsellorSession from "../Counsellor-Dash/Session-Counsellor/session";
 import SessionClientDetail from "../Counsellor-Dash/Session-Clients-detail/session";
@@ -36,7 +32,6 @@ import Aboutus from "../Main/Aboutus";
 import ContactUs from "../Main/Contactus";
 import Counsellors from "../Main/Counsellors/Counsellors";
 import { AnimatePresence } from "framer-motion";
-import Chat from "../User-Dash/Chats/Chats";
 import Assessment from "../Main/Assesment/assesment";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -47,8 +42,8 @@ export default function Allroutes() {
   const [session, setSession] = useState([]);
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    name:"",
-    email:"",
+    name: "",
+    email: "",
     phone: "",
     dob: "",
     gender: "",
@@ -69,23 +64,23 @@ export default function Allroutes() {
   });
 
   useEffect(() => {
-
-    const getSession = async ()=>{
+    const getSession = async () => {
       let config = {
-        method: 'get',
+        method: "get",
         maxBodyLength: Infinity,
-        url: 'https://back-zm-01.onrender.com/session/'+Cookies.get("data"),
-        headers: { }
+        url: "https://back-zm-01.onrender.com/session/" + Cookies.get("data"),
+        headers: {},
       };
-      
-      await axios.request(config)
-      .then((response) => {
-       setSession(response.data.data)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
+
+      await axios
+        .request(config)
+        .then((response) => {
+          setSession(response.data.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
     const gu = async () => {
       let config = {
         method: "get",
@@ -100,10 +95,10 @@ export default function Allroutes() {
       await axios
         .request(config)
         .then((response) => {
-          if(response.data.success){
+          if (response.data.success) {
             //console.log(response.data.data);
             setUser(response.data.data);
-          }else{
+          } else {
             //console.log(response.data);
           }
         })
@@ -111,21 +106,12 @@ export default function Allroutes() {
           console.log(error);
         });
     };
-   
 
-    if(Cookies.get("data")!==undefined){
+    if (Cookies.get("data") !== undefined) {
       getSession();
       gu();
     }
-    
-    
-    
-  }, [])
-  
-
-
-
-
+  }, []);
 
   return (
     <AnimatePresence>
@@ -139,11 +125,17 @@ export default function Allroutes() {
         <Route path="/counsellors" element={<Counsellors />} />
         <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path='/' element={<Dashbaord2/>}/> */}
-        <Route path="/dashboard2" element={session.length>0?<Dashbaord2 data={[session, user]} />:<Dashboard data={user}/>} />
-        <Route path="/session" element={<Session />} />
-        <Route path="/community" element={<Community2 />} />
-        <Route path="/community2" element={<Community2 />} />
-        <Route path="/community3" element={<Community3 />} />
+        <Route
+          path="/dashboard2"
+          element={
+            session?.length > 0 ? (
+              <Dashbaord2 data={[session, user]} />
+            ) : (
+              <Dashboard data={user} />
+            )
+          }
+        />
+
         <Route path="/dashboard-counsellor" element={<CounsellorDashboard />} />
         <Route path="/session-counsellor" element={<CounsellorSession />} />
         <Route
@@ -171,7 +163,6 @@ export default function Allroutes() {
         <Route path="/created" element={<Created />} />
         <Route path="/profile-counsellor" element={<Profilecounsellor />} />
         <Route path="/payment-counsellor" element={<PaymentCo />} />
-        <Route path="/chat" element={<Chat />} />
         <Route path="/assessment" element={<Assessment />} />
         <Route
           path="/add-payment-details-counsellor"

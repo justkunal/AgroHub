@@ -12,6 +12,97 @@
 .dashboard1-left-sa {
   height: -800px;
 }
+.admin-assignments {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.farmer-assign {
+  padding: 70px;
+}
+
+.assign-heading {
+  color: #333;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 32px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+}
+
+.assign-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.assignInput {
+  padding: 20px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+.assignLabel {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.preview {
+  margin-top: 20px;
+}
+
+.preview-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.preview p {
+  margin-bottom: 5px;
+}
 
 .profile-starter-h {
   color: #333;

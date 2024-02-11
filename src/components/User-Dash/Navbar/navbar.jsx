@@ -1,38 +1,20 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import zenlogo from "../images/zenlogo1.png";
+import zenlogo from "../images/agrohub.jpg";
 import Notification from "../images/notification.png";
 import Signout from "../images/sign-out.png";
 import Hamburger from "../images/hamburger.png";
 import Profile from "../images/user-profile.png";
-import DashboardIcon from "../images/dashnboard-icon.png";
 import ProfileIcon from "../images/profile-icon.png";
 import SessionIcon from "../images/session-icon.png";
 import ChatbotIcon from "../images/chat-icon.png";
 import CommunityIcon from "../images/community-icon.png";
 import PackageIcon from "../images/package-icon.png";
 import PaymentIcon from "../images/payment-icon.png";
-import BrainIcon from "../images/brain.png";
-import BrainIcon2 from "../images/brain2.png";
-import BrainIcon3 from "../images/brain3.png";
-import DownbarIcon from "../images/downbar.png";
-import Counsellor1 from "../images/counsellor1.png";
-import Counsellor2 from "../images/counsellor2.png";
-// import Counsellor2 from "../images/counsellor2.png";
-import timeIcon from "../images/time.png";
-import Minicalender from "../images/minicalender.png";
-import CancelIcon from "../images/cancel.png";
-import CalenderIcon from "../images/calender.png";
-import UpcomingIcon from "../images/upcoming-icon.png";
-import ZenchatIcon from "../images/zenchat.png";
-import LeftIcon from "../images/left-b-img.png";
-import RightIcon from "../images/right-b-img.png";
-import RightCounBanner from "../images/counsellor-right-banner.png";
-import LeftCounBanner from "../images/counsellor-left-banner.png";
+
 import DashIcon from "../images/dashblack.png";
 import PerInfo from "../images/profile-info.png";
-import CommDisIcon from "../images/comm-dis.png";
-import Fade from "react-reveal/Fade";
+
 import Bounce from "react-reveal/Bounce";
 import Search from "../images/search-1.png";
 import { Link } from "react-router-dom";
@@ -61,8 +43,8 @@ const Navbar = () => {
   return (
     <>
       <div className="nav-container">
-        <Link to="/home" className="nav-logo">
-          <img className="nav-logo-mb" src={zenlogo} alt="Zenmind Logo" />
+        <Link to="/home" className="farmer-logo">
+          <img className="farmer-nav-icon" src={zenlogo} alt="Zenmind Logo" />
         </Link>
         <div className="nav-box">
           <div className="nav-search">

@@ -21,9 +21,12 @@
 }
 
 .main-logo {
-  height: 50px;
-  width: 150px;
-  float: left;
+  transform: scale(0.4);
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  position: relative;
+  right: 200px;
 }
 
 .nav-options {
@@ -160,7 +163,7 @@
 
   .Navbar {
     width: 100%;
-    height: 56px;
+    height: 76px;
     flex-shrink: 0;
     background: #fff;
     box-shadow: -2px 2px 8px 1px rgba(0, 0, 0, 0.1);
@@ -173,8 +176,8 @@
     stroke-width: 2.5px;
     stroke: #24b8bb;
     position: relative;
-    left: 110px;
-    bottom: 25px;
+    right: 200px;
+    bottom: 29px;
   }
 
   .auth2 {
@@ -217,9 +220,7 @@
   }
 
   .logo-res {
-    width: 81.914px;
-    height: 26.516px;
-    flex-shrink: 0;
+    width: 70%;
   }
 
   .auth2 {
@@ -240,12 +241,6 @@
 
   .nav-options {
     display: none;
-  }
-
-  .main-logo {
-    position: relative;
-    right: 90px;
-    bottom: 3px;
   }
 
   .mobile-menu-link {

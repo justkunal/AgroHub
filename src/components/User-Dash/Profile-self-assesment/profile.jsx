@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./profile.css";
 
 import Profile from "../images/user-profile.png";
@@ -29,115 +29,202 @@ const Dashboard = () => {
       "_blank"
     );
   };
+
+  const [cropType, setCropType] = useState("");
+  const [fieldLocation, setFieldLocation] = useState("");
+  const [plantingSchedule, setPlantingSchedule] = useState("");
+  const [cropCareInstructions, setCropCareInstructions] = useState("");
+  const [harvestingGuidelines, setHarvestingGuidelines] = useState("");
+  const [dataCollectionRequirements, setDataCollectionRequirements] =
+    useState("");
+  const [reportingDeadlines, setReportingDeadlines] = useState("");
+  const [additionalNotes, setAdditionalNotes] = useState("");
+  const [cropImages, setCropImages] = useState([]);
+
+  const handleInputChange = (event, setStateFunction) => {
+    setStateFunction(event.target.value);
+  };
+
+  const handleImageChange = (event) => {
+    const files = Array.from(event.target.files);
+    setCropImages([...cropImages, ...files]);
+  };
+
   return (
     <>
       <Navbar></Navbar>
       <div className="dashboard1-main">
         <div className="dashboard1-left dashboard1-left-sa">
           <div className="dashboard-profile">
-            <img src={Profile} alt="Profile" />
+            <img className="farmer-pro" src={Profile} alt="Profile" />
             <div className="dash-profile-name">Martin Stanton</div>
           </div>
 
           <div className="admin-options">
-            <a href="/dashboard2" className="admin-list">
-              <img src={ProfileIcon} alt="Profile" />
-              <div>Dashboard</div>
-            </a>
             <div className="admin-list-dashboard">
-              <a href="/profile" className="admin-list-cont">
+              <a href="/dashboard" className="admin-list-cont">
                 <img src={DashboardIcon} alt="Dashboard" />
-                <div>Profile</div>
+                <div>Dashboard</div>
               </a>
             </div>
+            <a href="/profile" className="admin-list">
+              <img src={ProfileIcon} alt="Profile" />
+              <div>Profile</div>
+            </a>
 
-            <div className="comm-sub-option">
-              <a href="/profile" className="comm-sub-option-1">
-                <img src={PerInfo}></img>
-                <div className="comm-sub-h">Personal Information</div>
-              </a>
-
-              <a href="/profile-self-assessment" className="comm-sub-option-1">
-                <img className="comm-sub-img2" src={Assess}></img>
-                <div className="comm-sub-p">Self Assessment</div>
-              </a>
-            </div>
-            <a href="/session" className="admin-list">
-              <img src={SessionIcon} alt="Session" />
-              <div>Session</div>
-            </a>
-            <a href="/chat" className="admin-list">
-              <img src={ChatbotIcon} alt="Chatbot" />
-              <div>Chatbot</div>
-            </a>
-            <a href="/community" className="admin-list">
-              <img src={CommunityIcon} alt="Community" />
-              <div>Community</div>
-            </a>
             <div className="admin-list">
               <img src={PackageIcon} alt="Package Details" />
               <div>Package Details</div>
             </div>
-            <a href="/payment-history" className="admin-list">
-              <img src={PaymentIcon} alt="Payment History" />
-              <div>Payment History</div>
-            </a>
           </div>
         </div>
 
-        <div className="dashboard1-right dash-right-mb">
-          <div className="profile-container">
-            <div className="profile-starter">
-              <div className="profile-starter-h">Profile</div>
-            </div>
+        <div className="dashboard-right dashboard-right-mb">
+          <div className="farmer-assign">
+            <h2 className="assign-heading">Admin Assignments to Farmer</h2>
 
-            <div className="profile-subtopic-cont">
-              <div className="profile-subtopic-cont-left">
-                <div className="profile-sub-u">Profile/Self Assessment</div>
-                <div className="profile-sub-l">Personal Information</div>
+            <div className="assign-questions">
+              <label className="assignLabel" htmlFor="cropType">
+                Crop Type:
+              </label>
+              <input
+                type="text"
+                id="cropType"
+                value={cropType}
+                className="assignInput"
+                onChange={(event) => handleInputChange(event, setCropType)}
+              />
+
+              <label className="assignLabel" htmlFor="fieldLocation">
+                Field Location:
+              </label>
+              <input
+                type="text"
+                id="fieldLocation"
+                value={fieldLocation}
+                className="assignInput"
+                onChange={(event) => handleInputChange(event, setFieldLocation)}
+              />
+
+              <label className="assignLabel" htmlFor="plantingSchedule">
+                Planting Schedule:
+              </label>
+              <input
+                type="text"
+                id="plantingSchedule"
+                value={plantingSchedule}
+                className="assignInput"
+                onChange={(event) =>
+                  handleInputChange(event, setPlantingSchedule)
+                }
+              />
+
+              <label className="assignLabel" htmlFor="cropCareInstructions">
+                Crop Care Instructions:
+              </label>
+              <input
+                type="text"
+                id="cropCareInstructions"
+                className="assignInput"
+                value={cropCareInstructions}
+                onChange={(event) =>
+                  handleInputChange(event, setCropCareInstructions)
+                }
+              />
+
+              <label className="assignLabel" htmlFor="harvestingGuidelines">
+                Harvesting Guidelines:
+              </label>
+              <input
+                type="text"
+                id="harvestingGuidelines"
+                className="assignInput"
+                value={harvestingGuidelines}
+                onChange={(event) =>
+                  handleInputChange(event, setHarvestingGuidelines)
+                }
+              />
+
+              <label
+                className="assignLabel"
+                htmlFor="dataCollectionRequirements"
+              >
+                Data Collection Requirements:
+              </label>
+              <input
+                type="text"
+                id="dataCollectionRequirements"
+                className="assignInput"
+                value={dataCollectionRequirements}
+                onChange={(event) =>
+                  handleInputChange(event, setDataCollectionRequirements)
+                }
+              />
+
+              <label className="assignLabel" htmlFor="reportingDeadlines">
+                Reporting Deadlines:
+              </label>
+              <input
+                type="text"
+                id="reportingDeadlines"
+                value={reportingDeadlines}
+                className="assignInput"
+                onChange={(event) =>
+                  handleInputChange(event, setReportingDeadlines)
+                }
+              />
+
+              <label className="assignLabel" htmlFor="additionalNotes">
+                Additional Notes:
+              </label>
+              <textarea
+                id="additionalNotes"
+                className="assignInput"
+                value={additionalNotes}
+                onChange={(event) =>
+                  handleInputChange(event, setAdditionalNotes)
+                }
+              />
+
+              <div className="form-group">
+                <label className="assignLabel" htmlFor="cropImages">
+                  Crop Images:
+                </label>
+                <input
+                  type="file"
+                  id="cropImages"
+                  accept="image/*"
+                  multiple
+                  onChange={handleImageChange}
+                />
               </div>
             </div>
-          </div>
 
-          <div className="profile-assessment-banner">
-            <div className="assessment-banner">
-              <div className="assessment-container">
-                <div>
-                  <img src={LeftIcon}></img>
-                </div>
-
-                <div className="corner-img-set">
-                  <img className="corner-img" src={RightIcon}></img>
-                  <div className="take-ass">
-                    <div className="take-ass-h">
-                      Assess yourself with assessment!
-                    </div>
-                    <div className="take-ass-btn">Take Assessment </div>
-                  </div>
+            {cropImages.length > 0 && (
+              <div className="image-preview">
+                <h3>Selected Image Previews:</h3>
+                <div className="image-container">
+                  {cropImages.map((image, index) => (
+                    <img
+                      key={index}
+                      src={URL.createObjectURL(image)}
+                      alt={`Crop ${index + 1}`}
+                      className="crop-image"
+                    />
+                  ))}
                 </div>
               </div>
-            </div>
-          </div>
+            )}
 
-          <div className="dash-counsellor-banner-mb dash-counsellor-banner-mb-a">
-            <img
-              className="dash-counsellor-banner-mb-imgl"
-              src={LeftCounBanner}
-            ></img>
-            <div className="dash-counsellor-banner-mb-u">
-              <img
-                className="dash-counsellor-banner-mb-imgr"
-                src={RightCounBanner}
-              ></img>
-              <div className="dash-counsellor-banner-mb-cont">
-                <div className="dash-counsellor-banner-mb-cont-p">
-                  Assess Yourself with Assesment
-                </div>
-                <div className="dash-counsellor-banner-mb-cont-btn">
-                  Take Assessment
-                </div>
-              </div>
-            </div>
+            <h3>Admin Assignments Preview:</h3>
+            <p>Crop Type: {cropType}</p>
+            <p>Field Location: {fieldLocation}</p>
+            <p>Planting Schedule: {plantingSchedule}</p>
+            <p>Crop Care Instructions: {cropCareInstructions}</p>
+            <p>Harvesting Guidelines: {harvestingGuidelines}</p>
+            <p>Data Collection Requirements: {dataCollectionRequirements}</p>
+            <p>Reporting Deadlines: {reportingDeadlines}</p>
+            <p>Additional Notes: {additionalNotes}</p>
           </div>
         </div>
       </div>

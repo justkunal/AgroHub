@@ -44,43 +44,19 @@ const Dashboard = () => {
               <img src={ProfileIcon} alt="Profile" />
               <div>Profile</div>
             </a>
-            <a href="/session-counsellor" className="admin-list">
-              <img src={SessionIcon} alt="Session" />
-              <div>Session</div>
-            </a>
-
-            <a href="/counsellor-community" className="admin-list">
-              <img src={CommunityIcon} alt="Community" />
-              <div>Community</div>
-            </a>
-
-            <a href="/payment-counsellor" className="admin-list">
-              <img src={PaymentIcon} alt="Payment History" />
-              <div>Payment</div>
-            </a>
           </div>
         </div>
 
         <div className="dashboard1-right dash-right-mb dash-right-mb-c">
           <div className="dashboard1-right-container">
-            <div className="cdash-starter">Welcome, Erin!</div>
+            <div className="cdash-starter">Welcome, John!</div>
 
             <div className="cdash-progress">Progress</div>
 
             <div className="cdash-card-flex">
-              <div className="cdash-card-1">
-                <div className="cdash-card-cont">
-                  <div className="cdash-card-h">Total Income</div>
-                  <div className="cdash-card-p">45k</div>
-                </div>
-                <div className="cdash-right-s">
-                  <div className="cdash-card-ana">+20%</div>
-                  <img src={GrowthIcon}></img>
-                </div>
-              </div>
               <div className="cdash-card-2">
                 <div className="cdash-card-cont">
-                  <div className="cdash-card-h">Total Sessions</div>
+                  <div className="cdash-card-h">Total Farmer</div>
                   <div className="cdash-card-p">1000</div>
                 </div>
                 <div className="cdash-right-s">
@@ -90,7 +66,7 @@ const Dashboard = () => {
               </div>
               <div className="cdash-card-3">
                 <div className="cdash-card-cont">
-                  <div className="cdash-card-h">New Sessions</div>
+                  <div className="cdash-card-h">Total Datas</div>
                   <div className="cdash-card-p">1000</div>
                 </div>
                 <div className="cdash-right-s">
@@ -100,7 +76,7 @@ const Dashboard = () => {
               </div>
               <div className="cdash-card-4">
                 <div className="cdash-card-cont">
-                  <div className="cdash-card-h">Community Event</div>
+                  <div className="cdash-card-h">Last Week data</div>
                   <div className="cdash-card-p">1000</div>
                 </div>
                 <div className="cdash-right-s">
@@ -111,7 +87,7 @@ const Dashboard = () => {
             </div>
 
             <div className="upcoming-events dash2-up-ev">
-              <div className="upcoming-event-p">Up coming's events</div>
+              <div className="upcoming-event-p">Latest Data</div>
               <div className="upcoming-time">
                 <div className="today-p">Today</div>
                 <img src={DownbarIcon}></img>
@@ -125,38 +101,29 @@ const Dashboard = () => {
                     <div className="counsellor-details">
                       <img src={Counsellor1}></img>
                       <div className="counsellor-info">
-                        <div className="counsellor-name-dash2">
-                          Counsellor Name
-                        </div>
-                        <div className="anx-dp-dash2">Anxiety, Depression</div>
+                        <div className="counsellor-name-dash2">Farmer Name</div>
+                        <div className="anx-dp-dash2">Vaishali, Bihar</div>
                       </div>
                     </div>
                     <div className="counsellor-schedule">
                       <div className="schedule-date">
                         <img src={Minicalender}></img>
-                        <div className="schedule-date-t-dash2">20 Sep 2023</div>
+                        <div className="schedule-date-t-dash2">11 Feb 2024</div>
                       </div>
                       <div className="schedule-date">
                         <img src={timeIcon}></img>
-                        <div className="schedule-date-t-dash2">
-                          7:30 - 8:30 PM
-                        </div>
+                        <div className="schedule-date-t-dash2">7:30 PM</div>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="schedule-cancel-dash2">
-                    <img src={CancelIcon}></img>
-                    <div>Cancel the session</div>
                   </div>
                 </div>
 
                 <div className="join-reschedule-dash2">
-                  <Link to="https://meet.google.com/zza-eoye-vvu">
-                  <div className="join-btn-dash2">Join Now</div>
+                  <Link>
+                    <div className="join-btn-dash2">View Data</div>
                   </Link>
-                  <div className="reschedule-dash2">Reschedule</div>
-                  <div className="cancel-dash">Cancel</div>
+                  <div className="reschedule-dash2">Upload</div>
+                  <div className="cancel-dash">Update</div>
                 </div>
               </div>
 
@@ -166,45 +133,40 @@ const Dashboard = () => {
                     <div className="counsellor-details">
                       <img src={Counsellor2}></img>
                       <div className="counsellor-info">
-                        <div className="counsellor-name-dash2">
-                          Counsellor Name
+                        <div className="counsellor-name-dash2">Farmer Name</div>
+                        <div className="anx-dp-dash2">
+                          {" "}
+                          <div className="anx-dp-dash2">Vaishali, Bihar</div>
                         </div>
-                        <div className="anx-dp-dash2">Anxiety, Depression</div>
                       </div>
                     </div>
                     <div className="counsellor-schedule">
                       <div className="schedule-date">
                         <img src={Minicalender}></img>
-                        <div className="schedule-date-t-dash2">20 Sep 2023</div>
+                        <div className="schedule-date-t-dash2">11 Feb 2024</div>
                       </div>
                       <div className="schedule-date">
                         <img src={timeIcon}></img>
-                        <div className="schedule-date-t-dash2">
-                          7:30 - 8:30 PM
-                        </div>
+                        <div className="schedule-date-t-dash2">7:30 PM</div>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="schedule-cancel-dash2">
-                    <img src={CancelIcon}></img>
-                    <div>Cancel the session</div>
                   </div>
                 </div>
 
                 <div className="join-reschedule-dash2">
-                <Link to="https://meet.google.com/zza-eoye-vvu">
-                  <div className="join-btn-dash2">Join Now</div>
-                  </Link>                  <div className="reschedule-dash2">Reschedule</div>
-                  <div className="cancel-dash">Cancel</div>
+                  <Link>
+                    <div className="join-btn-dash2">View Data</div>
+                  </Link>
+                  <div className="reschedule-dash2">Upload</div>
+                  <div className="cancel-dash">Update</div>
                 </div>
               </div>
             </div>
 
             <div className="community-meeting community-meeting-cdash">
-              <div className="community-meeting-p1">Upcoming Sessions</div>
+              <div className="community-meeting-p1">All Data</div>
               <div className="community-date">
-                <div className="community-date-p">01/09/2023 - 30/09/2023</div>
+                <div className="community-date-p">01/02/2024 - 29/02/2024</div>
                 <img src={CalenderIcon}></img>
               </div>
             </div>
@@ -215,82 +177,84 @@ const Dashboard = () => {
                   <div className="community-meeting-info">
                     <img src={UpcomingIcon}></img>
                     <div className="info-content">
-                      <div className="community-meeting-h">Client name</div>
+                      <div className="community-meeting-h">Farmer name</div>
                       <div className="community-meeting-p">
-                        Anxiety, Depression
+                        Vaishali, Bihar{" "}
                       </div>
                     </div>
                   </div>
                   <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
+                    11 Feb 2024, 7:30 PM
                   </div>
                   <div className="btn-gap">
-                  <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
+                    <Link>
+                      <div className="last-cont-btn">View</div>
                     </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
+                    <div className="last-cont-btn-r">Upload</div>
+                    <div className="last-cont-btn-r">Update</div>
                   </div>
                 </div>
                 <div className="community-meeting-flex community-meeting-flex-cdash gray">
                   <div className="community-meeting-info">
                     <img src={UpcomingIcon}></img>
                     <div className="info-content">
-                      <div className="community-meeting-h">Client name</div>
+                      <div className="community-meeting-h">Farmer name</div>
                       <div className="community-meeting-p">
-                        Anxiety, Depression
+                        Vaishali, Bihar{" "}
                       </div>
                     </div>
                   </div>
                   <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
+                    11 Feb 2024, 7:30 PM
                   </div>
                   <div className="btn-gap">
-                    <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
+                    <Link>
+                      <div className="last-cont-btn">View</div>
                     </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
+                    <div className="last-cont-btn-r">Upload</div>
+                    <div className="last-cont-btn-r">Update</div>
                   </div>
                 </div>
                 <div className="community-meeting-flex community-meeting-flex-cdash">
                   <div className="community-meeting-info">
                     <img src={UpcomingIcon}></img>
                     <div className="info-content">
-                      <div className="community-meeting-h">Client name</div>
+                      <div className="community-meeting-h">Farmer name</div>
                       <div className="community-meeting-p">
-                        Anxiety, Depression
+                        Vaishali, Bihar{" "}
                       </div>
                     </div>
                   </div>
                   <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
+                    11 Feb 2024, 7:30 PM
                   </div>
                   <div className="btn-gap">
-                    <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
+                    <Link>
+                      <div className="last-cont-btn">View</div>
                     </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
+                    <div className="last-cont-btn-r">Upload</div>
+                    <div className="last-cont-btn-r">Update</div>
                   </div>
                 </div>
                 <div className="community-meeting-flex community-meeting-flex-cdash gray">
                   <div className="community-meeting-info">
                     <img src={UpcomingIcon}></img>
                     <div className="info-content">
-                      <div className="community-meeting-h">Client name</div>
+                      <div className="community-meeting-h">Farmer name</div>
                       <div className="community-meeting-p">
-                        Anxiety, Depression
+                        Vaishali, Bihar{" "}
                       </div>
                     </div>
                   </div>
                   <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
+                    11 Feb 2024, 7:30 PM
                   </div>
                   <div className="btn-gap">
-                    <div className="last-cont-btn">Join</div>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
+                    <Link>
+                      <div className="last-cont-btn">View</div>
+                    </Link>
+                    <div className="last-cont-btn-r">Upload</div>
+                    <div className="last-cont-btn-r">Update</div>
                   </div>
                 </div>
               </div>
@@ -319,7 +283,7 @@ const Dashboard = () => {
                   </div>
                   <div className="client-flex">
                     <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="client-btn">Join</div>
+                      <div className="client-btn">Join</div>
                     </Link>
                     <div className="client-reschedule">Reschedule</div>
                   </div>
@@ -337,7 +301,7 @@ const Dashboard = () => {
                   </div>
                   <div className="client-flex">
                     <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="client-btn">Join</div>
+                      <div className="client-btn">Join</div>
                     </Link>
                     <div className="client-reschedule">Reschedule</div>
                   </div>
@@ -355,7 +319,7 @@ const Dashboard = () => {
                   </div>
                   <div className="client-flex">
                     <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="client-btn">Join</div>
+                      <div className="client-btn">Join</div>
                     </Link>
                     <div className="client-reschedule">Reschedule</div>
                   </div>
@@ -372,219 +336,15 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="client-flex">
-                  <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="client-btn">Join</div>
-                    </Link>                    <div className="client-reschedule">Reschedule</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="upcoming-session-mb upcoming-session-mb-d">
-              <div className="upcoming-session-mb-p">
-                Your Community Meeting
-              </div>
-              <div className="upcoming-session-box-mb-flex">
-                <div className="upcoming-session-mb-date">01/09 - 30/09</div>
-                <img src={CalenderIcon}></img>
-              </div>
-            </div>
-
-            <div className="community-meeting community-meeting-cdash community-meeting-cpdash">
-              <div className="community-meeting-p1">Your Community Meeting</div>
-              <div className="community-date">
-                <div className="community-date-p">01/09/2023 - 30/09/2023</div>
-                <img src={CalenderIcon}></img>
-              </div>
-            </div>
-
-            <div className="last-container last-container-u">
-              <div className="last-box">
-                <div className="community-meeting-flex">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                      <div className="res-time-schedule">
-                        20 Sep 2023, 7:30 - 8:30 PM
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
                     <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
-                    </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-                <div className="community-meeting-flex gray">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                      <div className="res-time-schedule">
-                        20 Sep 2023, 7:30 - 8:30 PM
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                    <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
-                    </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-                <div className="community-meeting-flex">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                      <div className="res-time-schedule">
-                        20 Sep 2023, 7:30 - 8:30 PM
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                    <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
-                    </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
+                      <div className="client-btn">Join</div>
+                    </Link>{" "}
+                    <div className="client-reschedule">Reschedule</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="last-container last-container-cdash">
-              <div className="last-box">
-                <div className="community-meeting-flex community-meeting-flex-cdashs">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                    <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
-                    </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-                <div className="community-meeting-flex gray community-meeting-flex-cdashs">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                  <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
-                    </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-                <div className="community-meeting-flex community-meeting-flex-cdashs">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-
-                  <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
-                    </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-                <div className="community-meeting-flex gray community-meeting-flex-cdashs">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                  <Link to="https://meet.google.com/zza-eoye-vvu">
-                    <div className="last-cont-btn">Join</div>
-                    </Link>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="cdash-review-h">Reviews</div>
             <div className="cdash-review-flex">
               <div className="cdash-review-card">

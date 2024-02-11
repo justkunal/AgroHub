@@ -33,7 +33,7 @@ const Dashboard = () => {
       <div className="dashboard1-main">
         <div className="dashboard1-left">
           <div className="dashboard-profile">
-            <img src={Profile} alt="Profile" />
+            <img className="farmer-pro" src={Profile} alt="Profile" />
             <div className="dash-profile-name">Martin Stanton</div>
           </div>
 
@@ -46,18 +46,7 @@ const Dashboard = () => {
               <img src={ProfileIcon} alt="Profile" />
               <div>Profile</div>
             </a>
-            <a href="/session" className="admin-list">
-              <img src={SessionIcon} alt="Session" />
-              <div>Session</div>
-            </a>
-            <a href="/chat" className="admin-list">
-              <img src={ChatbotIcon} alt="Chatbot" />
-              <div>Chatbot</div>
-            </a>
-            <a href="/community" className="admin-list">
-              <img src={CommunityIcon} alt="Community" />
-              <div>Community</div>
-            </a>
+
             <div className="admin-list">
               <img src={PackageIcon} alt="Package Details" />
               <div>Package Details</div>
@@ -67,18 +56,6 @@ const Dashboard = () => {
               <a href="/payment-history" className="admin-list-cont">
                 <img src={PaymentWhiteIcon} alt="Dashboard" />
                 <div>Payment</div>
-              </a>
-            </div>
-
-            <div className="comm-sub-option">
-              <a href="/payment-history" className="comm-sub-option-1">
-                <img src={CommManIcon}></img>
-                <div className="comm-sub-p">Payment History</div>
-              </a>
-
-              <a href="/add-payment-details" className="comm-sub-option-1">
-                <img className="comm-sub-img2-up" src={CommDisIcon}></img>
-                <div className="comm-sub-h">Add Payment Details</div>
               </a>
             </div>
           </div>

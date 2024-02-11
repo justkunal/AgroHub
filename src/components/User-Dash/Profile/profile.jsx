@@ -25,8 +25,8 @@ const Dashboard = () => {
   const [gender, setGender] = useState("");
 
   const [user, setUser] = useState({
-    name:"",
-    email:"",
+    name: "",
+    email: "",
     phone: phone,
     dob: dob,
     gender: gender,
@@ -47,7 +47,6 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
-
     const gu = async () => {
       let config = {
         method: "get",
@@ -62,10 +61,10 @@ const Dashboard = () => {
       await axios
         .request(config)
         .then((response) => {
-          if(response.data.success){
+          if (response.data.success) {
             console.log(response.data.data);
             setUser(response.data.data);
-          }else{
+          } else {
             console.log(response.data);
           }
         })
@@ -74,7 +73,6 @@ const Dashboard = () => {
         });
     };
     gu();
-
   }, []);
 
   const _handleSubmit = async function (e) {
@@ -99,8 +97,7 @@ const Dashboard = () => {
       .then((response) => {
         if (response.data.success) {
           console.log(JSON.stringify(response.data.data));
-          setUser(response.data.data)
-          
+          setUser(response.data.data);
         } else {
           console.log(JSON.stringify(response.data));
         }
@@ -135,7 +132,7 @@ const Dashboard = () => {
       <div className="dashboard1-main">
         <div className="dashboard1-left">
           <div className="dashboard-profile">
-            <img src={Profile} alt="Profile" />
+            <img className="farmer-pro" src={Profile} alt="Profile" />
             <div className="dash-profile-name">Martin Stanton</div>
           </div>
 
@@ -151,37 +148,10 @@ const Dashboard = () => {
               </a>
             </div>
 
-            <div className="comm-sub-option">
-              <a href="/profile" className="comm-sub-option-1">
-                <img src={Assess}></img>
-                <div className="comm-sub-p">Personal Information</div>
-              </a>
-
-              <a href="/profile-self-assessment" className="comm-sub-option-1">
-                <img className="comm-sub-img2-up" src={PerInfo}></img>
-                <div className="comm-sub-h">Self Assessment</div>
-              </a>
-            </div>
-            <a href="/session" className="admin-list">
-              <img src={SessionIcon} alt="Session" />
-              <div>Session</div>
-            </a>
-            <a href="/chat" className="admin-list">
-              <img src={ChatbotIcon} alt="Chatbot" />
-              <div>Chatbot</div>
-            </a>
-            <a href="/community" className="admin-list">
-              <img src={CommunityIcon} alt="Community" />
-              <div>Community</div>
-            </a>
             <div className="admin-list">
               <img src={PackageIcon} alt="Package Details" />
               <div>Package Details</div>
             </div>
-            <a href="/payment-history" className="admin-list">
-              <img src={PaymentIcon} alt="Payment History" />
-              <div>Payment History</div>
-            </a>
           </div>
         </div>
 
@@ -198,7 +168,7 @@ const Dashboard = () => {
               </div>
 
               <div className="profile-img-merge">
-                <img src={ProfileImg} className="profile-subtopic-img1"></img>
+                <img src={Profile} className="farmer-pro"></img>
                 <img src={Camera} className="profile-subtopic-img2"></img>
               </div>
             </div>
@@ -210,14 +180,22 @@ const Dashboard = () => {
                 <label for="fname">
                   Full name<span>*</span>
                 </label>
-                <input type="name" placeholder="John Doe" value={user.name}></input>
+                <input
+                  type="name"
+                  placeholder="John Doe"
+                  value={user.name}
+                ></input>
               </div>
 
               <div className="profile-form-info profile-form-info-mb">
                 <label for="email">
                   Email<span>*</span>
                 </label>
-                <input type="email" placeholder="name@domain.com" value={user.email}></input>
+                <input
+                  type="email"
+                  placeholder="name@domain.com"
+                  value={user.email}
+                ></input>
               </div>
             </div>
             <div className="profile-form-cont">
@@ -259,84 +237,6 @@ const Dashboard = () => {
                   <option value="option3">Prefer Not to Say</option>
                 </select>
               </div>
-            </div>
-          </div>
-
-          <div className="profile-ques-cont">
-            <div className="profile-ques">
-              <div className="profile-ques-content profile-ques-content-up">
-                What are you seeking help for?
-              </div>
-              <div className="profile-ques-input">
-                <div className="profile-ques-box">
-                  Depression <img src={Cross}></img>
-                </div>
-                <div className="profile-ques-box">
-                  Stress <img src={Cross}></img>
-                </div>
-              </div>
-              <img src={Downbar} className="downbar-img"></img>
-            </div>
-
-            <div className="profile-ques">
-              <div className="profile-ques-content">
-                How long you have been experiencing these issues?
-              </div>
-              <div className="profile-ques-input">
-                <div className="profile-ques-box">
-                  1-2 months <img src={Cross}></img>
-                </div>
-              </div>
-              <img src={Downbar} className="downbar-img"></img>
-            </div>
-
-            <div className="profile-ques">
-              <div className="profile-ques-content">
-                How difficult it is to manage these concern?
-              </div>
-              <div className="profile-ques-input">
-                <div className="profile-ques-box">
-                  Somewhat difficult <img src={Cross}></img>
-                </div>
-              </div>
-              <img src={Downbar} className="downbar-img"></img>
-            </div>
-
-            <div className="profile-ques">
-              <div className="profile-ques-content">
-                Do you speak any Language ? If yes, please select the language
-                and you proficiency level?
-              </div>
-              <div className="profile-ques-input">
-                <div className="profile-ques-box">
-                  Hindi <img src={Cross}></img>
-                </div>
-              </div>
-              <img src={Downbar} className="downbar-img"></img>
-            </div>
-
-            <div className="profile-ques">
-              <div className="profile-ques-content">
-                What is your preferred medium for the session?
-              </div>
-              <div className="profile-ques-input">
-                <div className="profile-ques-box">
-                  Video <img src={Cross}></img>
-                </div>
-              </div>
-              <img src={Downbar} className="downbar-img"></img>
-            </div>
-
-            <div className="profile-ques">
-              <div className="profile-ques-content">
-                When do you want to schedule your first session?
-              </div>
-              <div className="profile-ques-input">
-                <div className="profile-ques-box">
-                  Right away <img src={Cross}></img>
-                </div>
-              </div>
-              <img src={Downbar} className="downbar-img"></img>
             </div>
           </div>
 

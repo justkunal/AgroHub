@@ -16,24 +16,10 @@ function ContactUs() {
         exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
         className="main-content main-content-con"
       >
-        <div className="hero">
-          <img
-            src={contact}
-            className="landing-image-3"
-            style={{ borderRadius: "5px" }}
-          />
-        </div>
+        <div className="hero"></div>
         <div className="contact-us">
           <Fade bottom>
             <div className="c-header">Contact Us</div>
-          </Fade>
-          <Fade bottom>
-            <div className="c-content">
-              To create a world where everyone experiences happiness, freedom
-              from stress, and relief from anxiety, we must collectively embrace
-              a multi-faceted approach that prioritizes the well-being of
-              individuals, communities, and the global society as a whole{" "}
-            </div>
           </Fade>
         </div>
         <div className="form-fill">

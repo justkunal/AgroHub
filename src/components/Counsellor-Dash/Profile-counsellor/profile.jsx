@@ -121,20 +121,6 @@ const Dashboard = () => {
                 <div>Profile</div>
               </a>
             </div>
-            <a href="/session-counsellor" className="admin-list">
-              <img src={SessionIcon} alt="Session" />
-              <div>Session</div>
-            </a>
-
-            <a href="/counsellor-community" className="admin-list">
-              <img src={CommunityIcon} alt="Community" />
-              <div>Community</div>
-            </a>
-
-            <a href="/payment-counsellor" className="admin-list">
-              <img src={PaymentIcon} alt="Payment History" />
-              <div>Payment</div>
-            </a>
           </div>
         </div>
 
@@ -146,7 +132,6 @@ const Dashboard = () => {
 
             <div className="profile-subtopic-cont">
               <div className="profile-subtopic-cont-left">
-                <div className="profile-sub-u">Subtopic</div>
                 <div className="profile-sub-l">Personal Information</div>
               </div>
 
@@ -280,7 +265,11 @@ const Dashboard = () => {
             <div className="profile-form-cont ">
               <div className="profile-form-info">
                 <label for="Desn">Designation</label>
-                <input type="text" id="Desn" placeholder="Pyschologist"></input>
+                <input
+                  type="text"
+                  id="Desn"
+                  placeholder="Agriculture Activitist"
+                ></input>
               </div>
 
               <div className="profile-form-info profile-form-info-org">

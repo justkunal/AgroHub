@@ -20,6 +20,7 @@ import Signout from "../Images/sign-out.png";
 import Hamburger from "../Images/hamburger.png";
 import Profile from "../Images/user-profile.png";
 import DashboardIcon from "../Images/dashnboard-icon.png";
+import AgroLogo from "../Images/agrohub.jpg";
 
 function Navbar() {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
@@ -75,7 +76,7 @@ function Navbar() {
         <div className="Navbar-content">
           <div className="logo">
             <a href="/home">
-              <img src={zenlogo} className="main-logo logo-res logo-res-1" />
+              <img src={AgroLogo} className="main-logo logo-res logo-res-1" />
             </a>
           </div>
           {/* <Fade top> */}
@@ -92,7 +93,7 @@ function Navbar() {
               About Us
             </div>
             <div onClick={counsellor} className="options options-1">
-              Our Counselors
+              For Coordinator
             </div>
             <div onClick={contact} className="options">
               Contact Us{" "}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import zenlogo from "../images/zenlogo1.png";
+import agrologo from "../images/agrohub1.png";
 import Notification from "../images/notification.png";
 import Signout from "../images/sign-out.png";
 import Hamburger from "../images/hamburger.png";
@@ -55,7 +55,7 @@ const Navbar = () => {
       <div className="nav-container">
         <div className="nav-logo ">
           <Link to="/home">
-            <img className="nav-logo-mb" src={zenlogo} alt="Zenmind Logo" />
+            <img className="agrologo" src={agrologo} alt="Zenmind Logo" />
           </Link>
         </div>
         <div className="nav-box">

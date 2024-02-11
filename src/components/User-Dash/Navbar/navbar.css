@@ -9,9 +9,10 @@
   align-items: center; /* To vertically center items within the navbar */
 }
 
-.nav-logo {
-  flex-shrink: 0;
-  padding-left: 42px;
+.farmer-logo {
+  transform: scale(0.4);
+  position: relative;
+  right: 100px;
 }
 
 .nav-box {

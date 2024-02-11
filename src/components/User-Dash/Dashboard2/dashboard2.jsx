@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./dashboard2.css";
 
 import Profile from "../images/user-profile.png";
@@ -27,46 +27,56 @@ import RightIcon from "../images/right-b-img.png";
 import RightCounBanner from "../images/counsellor-right-banner.png";
 import LeftCounBanner from "../images/counsellor-left-banner.png";
 import Navbar from "../Navbar/navbar";
-import session from "../Session/session";
 import axios from "axios";
 
-const Dashboard2 = ({data}) => {
-
+const Dashboard2 = ({ data }) => {
   const [sessions, getSessions] = useState(data[0]);
-  const [clist,setClist] = useState([]);
-  
+  const [clist, setClist] = useState([]);
 
   useEffect(() => {
-
-    const getClist = async ()=>{
+    const getClist = async () => {
       let config = {
-        method: 'get',
+        method: "get",
         maxBodyLength: Infinity,
-        url: 'https://back-zm-01.onrender.com/doc/',
-        headers: { }
+        url: "https://back-zm-01.onrender.com/doc/",
+        headers: {},
       };
-      
-      axios.request(config)
-      .then((response) => {
-       // console.log(response.data.data)
-        setClist(response.data.data)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
+
+      axios
+        .request(config)
+        .then((response) => {
+          // console.log(response.data.data)
+          setClist(response.data.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
 
     getClist();
-    
-  }, [])
+  }, []);
 
-  const name = (id)=>{
-    const n = clist.find(item=>item._id===id)
-    console.log(n)
-    if(!n) return "unkown";
-    return n.name
-  }
- 
+  const name = (id) => {
+    const n = clist.find((item) => item._id === id);
+    console.log(n);
+    if (!n) return "unkown";
+    return n.name;
+  };
+
+  const [cropType, setCropType] = useState("");
+  const [fieldLocation, setFieldLocation] = useState("");
+  const [plantingSchedule, setPlantingSchedule] = useState("");
+  const [cropCareInstructions, setCropCareInstructions] = useState("");
+  const [harvestingGuidelines, setHarvestingGuidelines] = useState("");
+  const [dataCollectionRequirements, setDataCollectionRequirements] =
+    useState("");
+  const [reportingDeadlines, setReportingDeadlines] = useState("");
+  const [additionalNotes, setAdditionalNotes] = useState("");
+
+  const handleInputChange = (event, setStateFunction) => {
+    setStateFunction(event.target.value);
+  };
+
   return (
     <>
       <Navbar></Navbar>
@@ -112,280 +122,95 @@ const Dashboard2 = ({data}) => {
         </div>
 
         <div className="dashboard-right dashboard-right-mb">
-          <div className="dashboard-right-container">
-            <div className="right-starter">
-              <div className="right-starter-h">Good Morning, John doe</div>
-              <div className="right-starter-date">Monday, 20 Sep 2023</div>
-            </div>
+          <div>
+            <h2>Admin Assignments to Farmer</h2>
 
-            <div className="dashboard-cards">
-              <div className="dashboard-card1">
-                <div className="card1-divide dash-card1">
-                  <div className="assesment-score dash-asses">
-                    <div className="assesment-total">Assesssment Score</div>
-                    <div className="total-scored">
-                      75/100 <span>Score</span>
-                    </div>
-                  </div>
-                  <div className="brain-icon">
-                    <img src={BrainIcon}></img>
-                  </div>
-                </div>
-              </div>
-              <div className="dashboard-cards-sec">
-                <div className="dashboard-card2">
-                  <div className="card1-divide">
-                    <div className="assesment-score asses-score">
-                      <div className="assesment-total">Total Sessions</div>
-                      <div className="total-scored">
-                        10 <span>Sessions</span>
-                      </div>
-                    </div>
-                    <div className="brain-icon">
-                      <img className="brain-con-2" src={BrainIcon2}></img>
-                    </div>
-                  </div>
-                </div>
+            <label htmlFor="cropType">Crop Type:</label>
+            <input
+              type="text"
+              id="cropType"
+              value={cropType}
+              onChange={(event) => handleInputChange(event, setCropType)}
+            />
 
-                <div className="dashboard-card3">
-                  <div className="card1-divide">
-                    <div className="assesment-score asses-score1">
-                      <div className="assesment-total">Session Attended</div>
-                      <div className="total-scored">
-                        7/10 <span>Sessions</span>
-                      </div>
-                    </div>
-                    <div className="brain-icon">
-                      <img className="brain-con-2" src={BrainIcon3}></img>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <label htmlFor="fieldLocation">Field Location:</label>
+            <input
+              type="text"
+              id="fieldLocation"
+              value={fieldLocation}
+              onChange={(event) => handleInputChange(event, setFieldLocation)}
+            />
 
-            <div className="upcoming-events dash2-up-ev">
-              <div className="upcoming-event-p">Up coming's events</div>
-              <div className="upcoming-time">
-                <div className="today-p">Today</div>
-                <img src={DownbarIcon}></img>
-              </div>
-            </div>
+            <label htmlFor="plantingSchedule">Planting Schedule:</label>
+            <input
+              type="text"
+              id="plantingSchedule"
+              value={plantingSchedule}
+              onChange={(event) =>
+                handleInputChange(event, setPlantingSchedule)
+              }
+            />
 
-            <div className="dash-counsellor-flex">
-              {sessions.map((session)=>{
-                    return(
-                      <>
-                      <div className="dash-counsellor-dash2">
-                <div className="dash-counsellor-left">
-                  <div className="counsellor-main">
-                    <div className="counsellor-details">
-                      <img src={Counsellor1}></img>
-                      <div className="counsellor-info">
-                        <div className="counsellor-name-dash2">
-                           {name(session.docId)}
-                        </div>
-                        <div className="anx-dp-dash2">{session.title}</div>
-                      </div>
-                    </div>
-                    <div className="counsellor-schedule">
-                      <div className="schedule-date">
-                        <img src={Minicalender}></img>
-                        <div className="schedule-date-t-dash2">{session.date}</div>
-                      </div>
-                      <div className="schedule-date">
-                        <img src={timeIcon}></img>
-                        <div className="schedule-date-t-dash2">
-                        {session.time}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            <label htmlFor="cropCareInstructions">
+              Crop Care Instructions:
+            </label>
+            <input
+              type="text"
+              id="cropCareInstructions"
+              value={cropCareInstructions}
+              onChange={(event) =>
+                handleInputChange(event, setCropCareInstructions)
+              }
+            />
 
-                  <div className="schedule-cancel-dash2">
-                    <img src={CancelIcon}></img>
-                    <div>Cancel the session</div>
-                  </div>
-                </div>
+            <label htmlFor="harvestingGuidelines">Harvesting Guidelines:</label>
+            <input
+              type="text"
+              id="harvestingGuidelines"
+              value={harvestingGuidelines}
+              onChange={(event) =>
+                handleInputChange(event, setHarvestingGuidelines)
+              }
+            />
 
-                <div className="join-reschedule-dash2">
-                  <div className="join-btn-dash2">Join Now</div>
-                  <div className="reschedule-dash2">Reschedule</div>
-                  <div className="cancel-dash">Cancel</div>
-                </div>
-              </div>
-                      </>
-                    )
-              })}
+            <label htmlFor="dataCollectionRequirements">
+              Data Collection Requirements:
+            </label>
+            <input
+              type="text"
+              id="dataCollectionRequirements"
+              value={dataCollectionRequirements}
+              onChange={(event) =>
+                handleInputChange(event, setDataCollectionRequirements)
+              }
+            />
 
-           
-            </div>
+            <label htmlFor="reportingDeadlines">Reporting Deadlines:</label>
+            <input
+              type="text"
+              id="reportingDeadlines"
+              value={reportingDeadlines}
+              onChange={(event) =>
+                handleInputChange(event, setReportingDeadlines)
+              }
+            />
 
-            <div className="upcoming-session">
-              <div className="upcoming-session-1">
-                <div className="upcoming-session-box">
-                  <div className="upcoming-session-p">Upcoming Sessions</div>
-                  <div className="upcoming-session-box-flex">
-                    <div className="upcoming-session-date">
-                      01/09/2023 - 30/09/2023
-                    </div>
-                    <img src={CalenderIcon}></img>
-                  </div>
-                </div>
-              </div>
-              <div className="upcoming-session-1 res-not-inc">
-                <div className="upcoming-session-box">
-                  <div className="upcoming-session-p">Upcoming Sessions</div>
-                  <div className="upcoming-session-box-flex">
-                    <div className="upcoming-session-date">
-                      01/09/2023 - 30/09/2023
-                    </div>
-                    <img src={CalenderIcon}></img>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="upcoming-session-mb">
-              <div className="upcoming-session-mb-p">Upcoming Sessions</div>
-              <div className="upcoming-session-box-mb-flex upcoming-session-mb-date-us">
-                <div className="upcoming-session-mb-date ">01/09 - 30/09</div>
-                <img src={CalenderIcon}></img>
-              </div>
-            </div>
-            <div className="client-container">
-              <div className="upcoming-left-dash2">
-                <div className="upcoming-left-container">
+            <label htmlFor="additionalNotes">Additional Notes:</label>
+            <textarea
+              id="additionalNotes"
+              value={additionalNotes}
+              onChange={(event) => handleInputChange(event, setAdditionalNotes)}
+            />
 
-                  {clist.map((co)=>{
-                    return(<>
-                    <div className="left-content-2">
-                    <div className="upcoming-container">
-                      <img src={UpcomingIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">{co.name}</div>
-                        <div className="client-desc">{co.about}</div>
-                        <div className="client-desc">
-                          {co.edu.institution_name}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-btn">Join</div>
-                      <div className="client-reschedule">Reschedule</div>
-                    </div>
-                  </div>
-                    </>)
-                  })}
-   
-                </div>
-              </div>
-              <div className="upcoming-session-mb upcoming-session-mb-2 upcoming-session-mb-2-chat">
-                <div className="upcoming-session-mb-p">Chatbot</div>
-                <div className="upcoming-session-box-mb-flex upcoming-session-box-mb-flex-bot">
-                  <div className="upcoming-session-mb-date">01/09 - 30/09</div>
-                  <img src={CalenderIcon}></img>
-                </div>
-              </div>
-              <div className="upcoming-left-dash2">
-                <div className="upcoming-left-container">
-                  <div className="left-content-2">
-                    <div className="upcoming-container">
-                      <img src={ZenchatIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">Topic</div>
-                        <div className="client-desc">
-                          Chatbot: lorem ipsum dolor si...
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-reschedule-chat">3:00 pm</div>
-                    </div>
-                  </div>
-                  <div className="left-content-1">
-                    <div className="upcoming-container">
-                      <img src={ZenchatIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">Topic</div>
-                        <div className="client-desc">
-                          Chatbot: lorem ipsum dolor si...
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-reschedule-chat">3:00 pm</div>
-                    </div>
-                  </div>
-                  <div className="left-content">
-                    <div className="upcoming-container">
-                      <img src={ZenchatIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">Topic</div>
-                        <div className="client-desc">
-                          Chatbot: lorem ipsum dolor si...
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-reschedule-chat">3:00 pm</div>
-                    </div>
-                  </div>
-                  <div className="left-content-1">
-                    <div className="upcoming-container">
-                      <img src={ZenchatIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">Topic</div>
-                        <div className="client-desc">
-                          Chatbot: lorem ipsum dolor si...
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-reschedule-chat">3:00 pm</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-
-
-            <div className="assessment-banner">
-              <div className="assessment-container">
-                <div>
-                  <img src={LeftIcon}></img>
-                </div>
-
-                <div className="corner-img-set">
-                  <img className="corner-img" src={RightIcon}></img>
-                  <div className="take-ass">
-                    <div className="take-ass-h">
-                      Assess yourself with assessment!
-                    </div>
-                    <div className="take-ass-btn">Take Assessment </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="dash-counsellor-banner-mb dash-counsellor-banner-mb-d">
-              <img
-                className="dash-counsellor-banner-mb-imgl"
-                src={LeftCounBanner}
-              ></img>
-              <div className="dash-counsellor-banner-mb-u">
-                <img
-                  className="dash-counsellor-banner-mb-imgr"
-                  src={RightCounBanner}
-                ></img>
-                <div className="dash-counsellor-banner-mb-cont">
-                  <div className="dash-counsellor-banner-mb-cont-p">
-                    Assess Yourself with Assesment
-                  </div>
-                  <div className="dash-counsellor-banner-mb-cont-btn">
-                    Take Assessment
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h3>Admin Assignments Preview:</h3>
+            <p>Crop Type: {cropType}</p>
+            <p>Field Location: {fieldLocation}</p>
+            <p>Planting Schedule: {plantingSchedule}</p>
+            <p>Crop Care Instructions: {cropCareInstructions}</p>
+            <p>Harvesting Guidelines: {harvestingGuidelines}</p>
+            <p>Data Collection Requirements: {dataCollectionRequirements}</p>
+            <p>Reporting Deadlines: {reportingDeadlines}</p>
+            <p>Additional Notes: {additionalNotes}</p>
           </div>
         </div>
       </div>

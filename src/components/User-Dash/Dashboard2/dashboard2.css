@@ -767,6 +767,8 @@
   font-weight: 500;
   line-height: normal;
   cursor: pointer;
+  position: relative;
+  right: 120px;
 }
 
 .take-ass-h {
@@ -794,9 +796,9 @@
 }
 
 .take-ass-h {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 120%;
 }
 
 .assessment-banner {

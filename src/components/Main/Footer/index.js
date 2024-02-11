@@ -1,6 +1,6 @@
 import React from "react";
 import index from "./index.css";
-import logo from "../Images/zen-new.png";
+import logo from "../Images/agrohub1.png";
 import ig from "../Images/iglogo.png";
 import linkedin from "../Images/linkedin.png";
 import twitter from "../Images/twitter.png";
@@ -31,14 +31,13 @@ function Footer() {
             <Link to="/about" className="footer-links">
               About
             </Link>
-            <Link to="/" className="footer-links">
-              Community
-            </Link>
+
             <Link to="/counsellors" className="footer-links">
-              For Counsellors
+              For Coordinators
             </Link>
-            <Link to="/" className="footer-links">
-              Pricing
+
+            <Link to="/contactus" className="footer-links">
+              Contact Us
             </Link>
           </div>
 
@@ -52,7 +51,7 @@ function Footer() {
               >
                 Contact Us
               </div>
-              <div>+91 8699427745</div>
+              <div>+91 999XXXXXXXX</div>
               <div>info@email.com</div>
               <div
                 className="location-f"
@@ -73,15 +72,7 @@ function Footer() {
               <div>We’d like to get your valuable feedback to</div>
               <div>give you an even better experience.</div>
             </div>
-            <button
-              onClick={() => {
-                window.location.href =
-                  "https://chat.whatsapp.com/FJVOl5miUzYFcpOOJLwL1N";
-              }}
-              className="rightmost-connect-button"
-            >
-              Connect
-            </button>
+            <button>Connect</button>
           </div>
         </div>
       </div>
@@ -89,7 +80,7 @@ function Footer() {
       <div className="footer-mb">
         <div className="footer-top-mb">
           <Link to="/home">
-            <img src={logo}></img>
+            <img className="footer-mb-agro" src={logo}></img>
           </Link>
           <div className="follow-mb">Follow Our Social Media</div>
           <div className="social-logos">
