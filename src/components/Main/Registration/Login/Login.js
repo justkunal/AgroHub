@@ -17,10 +17,9 @@ const Login = () => {
   const navigate = useNavigate();
 
   const _handleSubmit = async function (e) {
-    
     e.preventDefault();
 
-    // const axios = require("axios");
+    // const axios = require("axios")
 
     let data = JSON.stringify({
       email: email,
@@ -44,7 +43,7 @@ const Login = () => {
         if (response.data.status) {
           // Assuming the response contains a "success" flag for a successful login
           // Redirect the user to the home page upon successful login
-          Cookies.set('data', response.data.success._id, { expires: 7 });
+          Cookies.set("data", response.data.success._id, { expires: 7 });
           navigate("/dashboard2"); // You might need to change '/home' to the appropriate route
         } else {
           console.log("Login failed. Please check your credentials.");
@@ -87,9 +86,7 @@ const Login = () => {
                 </span>
               </p>
             </div>
-            <div className="auth-button">
-             
-            </div>
+            <div className="auth-button"></div>
             <div className="or-divider">
               <div className="line"></div>
               <p className="divider">Or</p>

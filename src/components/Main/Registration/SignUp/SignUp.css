@@ -1,6 +1,6 @@
 .signup {
   display: flex; /* Use flexbox to create a row layout */
-  justify-content: space-between; /* Add space between the left and right sides */
+  justify-content: space-between; /* Add spaces between the left and right sides */
   align-items: center;
   padding-top: 39px;
 }

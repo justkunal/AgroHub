@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const SignUp = () => {
-  // Define the show/hide state outside the function so it persists between renders.
+  // Define the show/hide state outside the function .so it persists between renders.
   const [show, setShow] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -45,13 +45,11 @@ const SignUp = () => {
       .request(config)
       .then((response) => {
         // console.log(JSON.stringify(response.data));
-        if(response.data.status){
-          Cookies.set('data', response.data.message._id, { expires: 7 });
-          navigate("/dashboard2");}
-        else{
-
+        if (response.data.status) {
+          Cookies.set("data", response.data.message._id, { expires: 7 });
+          navigate("/dashboard2");
+        } else {
         }
-
       })
       .catch((error) => {
         console.log(error);
@@ -90,9 +88,7 @@ const SignUp = () => {
                 </span>
               </p>
             </div>
-            <div className="auth-button">
-              
-            </div>
+            <div className="auth-button"></div>
             <div className="or-divider">
               <div className="line"></div>
               <p className="divider">Or</p>
